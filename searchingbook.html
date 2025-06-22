@@ -6,6 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+    function book(name , callback){
+        setTimeout(() => {
+              const availableBooks = ["Harry Potter", "The Alchemist", "Atomic Habits", "Think and Grow Rich"];
+              const found = availableBooks.includes(name);
+              if(found){
+                callback(null,`Found your book ${name}`);
+              }
+              else{
+                callback(`${name} is not avilable`,null);
+              }
+        }, 2000);
+    }
+
+    book("The Alchemis" , (error , found ) => {
+        if(error){
+            console.log(error);
+        }
+        else{
+            console.log(found);
+        }
+    })
+    </script>
 </body>
 </html>
